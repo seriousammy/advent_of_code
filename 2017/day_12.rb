@@ -85,4 +85,4 @@ puts "Day 12 Solution 1: #{checked_indexes.count}"
 #
 # How many groups are there in total?
 
-
+puts input_array
