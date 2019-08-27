@@ -1,4 +1,5 @@
-require "./freq_analyzer"
+require "day_1/freq_analyzer"
+require 'spec_helper'
 
 RSpec.describe FrequencyAnalyzer do
   context "with a test.txt file as input" do
