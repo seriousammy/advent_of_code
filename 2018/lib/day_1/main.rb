@@ -1,8 +1,9 @@
-require "./freq_analyzer"
+require './frequency_accumulator'
+require '../input_to_array'
 
-fa = FrequencyAnalyzer.new "input.txt"
-puts "Filename: #{fa.file_name}"
+input = InputToArray.new('input.txt')
 
-puts "Result: #{fa.calculate_total_frequency()}"
+fa = Day1::FrequencyAccumulator.new(input.input_array)
+puts "Day 1 Part 1: #{fa.calculate}"
 
-puts "Find Duplicate: #{fa.find_frequency_duplicate_repeated()}"
+puts "Day 1 Part 2: #{fa.find_duplicate}"
