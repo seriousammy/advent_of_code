@@ -1,8 +1,9 @@
-require "./box_label_analyzer"
+require './checksum'
+require '../input_to_array'
 
-bla = BoxLabelAnalyzer.new "input.txt"
+input = InputToArray.new('input.txt').translate_file_input_to_array(:to_s)
 
-puts "Part 1 solution: #{bla.calculate_twice_cross_thrice_repeats}"
+cs = Day2::CheckSum.new(input.map(&:strip))
 
-bla.compare_charrs_by_element
-puts "Part 2 solution: #{bla.result_code}"
+puts "Day 2 Part 1: #{cs.checksum}"
+puts "Day 2 Part 2: #{cs.differ_by_one_char_word}"

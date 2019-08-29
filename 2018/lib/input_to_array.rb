@@ -8,7 +8,7 @@ class InputToArray
   def translate_file_input_to_array(to_type = :to_i)
     input_array = []
     File.readlines(file_name).each do |line|
-      input_array << line.send(:to_i)
+      input_array << line.send(to_type)
     end
     input_array
   end
