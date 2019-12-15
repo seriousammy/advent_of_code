@@ -23,13 +23,12 @@ class IntcodeMod
     instruction_pointer = 0
     while instruction_pointer < num_ary.length do
       break if (num_ary[instruction_pointer] || num_ary[instruction_pointer].digits.take(2)) == 99
-
       decoded_opcode = decode_opcode(num_ary[instruction_pointer])
       if [3, 4].include? decoded_opcode
-        opcode_ex(assemble_intcode(instruction_pointer, 2))
+        opcode_ex(assemble_intcode(instruction_pointer, 1))
         instruction_pointer += 2
       elsif [5, 6].include? decoded_opcode
-        instruction_pointer = opcode_parameter_adjust(assemble_intcode(instruction_pointer, 3), instruction_pointer)
+        instruction_pointer = opcode_parameter_adjust(assemble_intcode(instruction_pointer, 2), instruction_pointer)
       else
         opcode_ex(assemble_intcode(instruction_pointer, 3))
         instruction_pointer += 4
@@ -83,7 +82,7 @@ class IntcodeMod
     when 3
       num_ary[intcode[1]] = input_code
     when 4
-      if opcode_param(intcode[0], 3) == 1
+      if opcode_param(intcode[0], 2) == 1
         output << intcode[1]
       else
         output << num_ary[intcode[1]]
