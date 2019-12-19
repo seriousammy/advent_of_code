@@ -1,4 +1,4 @@
-require 'day_4/password_validator'
+require 'day_04/password_validator'
 require 'spec_helper'
 
 RSpec.describe PasswordValidator do

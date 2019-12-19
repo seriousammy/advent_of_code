@@ -1,4 +1,4 @@
-require 'day_3/untangle'
+require 'day_03/untangle'
 require 'spec_helper'
 
 RSpec.describe Untangle do

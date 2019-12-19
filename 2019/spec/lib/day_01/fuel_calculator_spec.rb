@@ -1,4 +1,4 @@
-require 'day_1/fuel_calculator'
+require 'day_01/fuel_calculator'
 require 'spec_helper'
 
 RSpec.describe FuelCalculator do

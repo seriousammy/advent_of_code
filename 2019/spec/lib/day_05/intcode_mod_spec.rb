@@ -1,4 +1,4 @@
-require 'day_5/intcode_mod'
+require 'day_05/intcode_mod'
 require 'spec_helper'
 
 RSpec.describe IntcodeMod do
