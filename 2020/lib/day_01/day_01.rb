@@ -7,13 +7,7 @@ class Day01
   end
 
   def twos(target:)
-    h = {}
-    @input.each_with_index do |value, index|
-      target_pair_number = target - value
-      return target_pair_number * value if h[target_pair_number]
-
-      h[value] = index
-    end
+    pair(nums: @input, target: target)
   end
 
   def threes(target:)
@@ -22,7 +16,7 @@ class Day01
     @input.each_with_index do |value, index|
       target_pair_number = target - value
       if (pair = pair(nums: nums, target: target_pair_number))
-        return (pair.append(value)).inject(1, :*)
+        return (pair * value)
       end
 
       nums << value
@@ -37,7 +31,7 @@ class Day01
 
     nums.each_with_index do |value, index|
       target_pair_number = target - value
-      return [target_pair_number, value] if h[target_pair_number]
+      return [target_pair_number, value].inject(1, :*) if h[target_pair_number]
 
       h[value] = index
     end
